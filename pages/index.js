@@ -26,10 +26,11 @@ export default function Home() {
                 <h1 className={styles.title}>Alfred Chow</h1>
 
                 <p className={styles.description}>
-                    I'm a Software Developer based in Hong Kong but working for
-                    a Singapore company remotely. My favorite technologies at
-                    this moment are
-                    <code className={styles.code}>React.js</code> and{" "}
+                    I&apos;m a Software Developer based in Hong Kong but working
+                    for a Singapore company remotely. My favorite technologies
+                    at this moment are
+                    <code className={styles.code}>React.js</code>,{" "}
+                    <code className={styles.code}>Next.js</code> and{" "}
                     <code className={styles.code}>Node.js</code>.
                 </p>
 
@@ -76,12 +77,12 @@ export default function Home() {
 
             <footer className={styles.footer}>
                 <a
-                    href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                    href="https://nextjs.org/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     It is not a template website but a progressive web app
-                    handmade by Alfred Chow
+                    handmade with Next.js
                 </a>
             </footer>
         </div>
