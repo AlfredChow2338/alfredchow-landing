@@ -77,12 +77,11 @@ export default function Home() {
 
             <footer className={styles.footer}>
                 <a
-                    href="https://nextjs.org/"
+                    href="https://github.com/AlfredChow2338"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    It is not a template website but a progressive web app
-                    handmade with Next.js
+                    Copyright reserved by Alfred Chow &copy;
                 </a>
             </footer>
         </div>
