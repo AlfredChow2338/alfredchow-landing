@@ -76,7 +76,7 @@ export default function Home() {
                                     : "/profile_pic.jpg"
                             }
                             alt="Alfred Chow"
-                            width={200}
+                            width={matrix ? 222 : 200}
                             height={380}
                         />
                     </Box>
