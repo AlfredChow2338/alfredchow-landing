@@ -1,11 +1,59 @@
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+import { alpha, styled, useTheme } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
+import Switch from "@mui/material/Switch";
+import Box from "@mui/material/Box";
+
 import styles from "../styles/Home.module.css";
-// import ProfilePicture from "../assets/profile_pic.jpg";
+import { ThemeContext } from "../context/ThemeContextProvider";
+
+const CodeBlockText = ({ children, theme }) => (
+    <code
+        style={{
+            backgroundColor: theme.palette.codeblock,
+            borderRadius: 5,
+            margin: "0.5em",
+            padding: "0.5em",
+            fontSize: "1.1rem",
+            fontFamily:
+                "Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace",
+        }}
+    >
+        {children}
+    </code>
+);
 
 export default function Home() {
+    const theme = useTheme();
+    const { matrix, toggleMatrix } = React.useContext(ThemeContext);
+    const ModeSwitch = styled(Switch)(({ theme }) => ({
+        "& .MuiSwitch-switchBase.Mui-checked": {
+            color: grey[600],
+            "&:hover": {
+                backgroundColor: alpha(
+                    grey[600],
+                    theme.palette.action.hoverOpacity
+                ),
+            },
+        },
+        "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+            backgroundColor: grey[600],
+        },
+    }));
+    const handleChangeMatrixMode = (e) => {
+        toggleMatrix();
+    };
+    console.log(matrix);
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            style={{
+                backgroundColor: theme.palette.background,
+                color: theme.palette.text,
+            }}
+        >
             <Head>
                 <title>Alfred Chow</title>
                 <meta name="keywords" content="Alfred Chow" />
@@ -13,26 +61,48 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                {/* <h1 className={styles.title}>
-                    Welcome to <a href="https://nextjs.org">Next.js!</a>
-                </h1> */}
-                <Image
-                    src="/profile_pic.jpg"
-                    alt="Alfred Chow"
-                    width={200}
-                    height={380}
-                />
-
-                <h1 className={styles.title}>Alfred Chow</h1>
-
-                <p className={styles.description}>
-                    I&apos;m a Software Developer based in Hong Kong but working
-                    for a Singapore company remotely. My favorite technologies
-                    at this moment are
-                    <code className={styles.code}>React.js</code>,{" "}
-                    <code className={styles.code}>Next.js</code> and{" "}
-                    <code className={styles.code}>Node.js</code>.
-                </p>
+                <Box textAlign="right" pt={4}>
+                    <ModeSwitch
+                        checked={matrix}
+                        onChange={handleChangeMatrixMode}
+                    />
+                </Box>
+                <Box mt={6}>
+                    <Box display="flex" justifyContent="center">
+                        <Image
+                            src={
+                                matrix
+                                    ? "/profile_pic_dark.jpg"
+                                    : "/profile_pic.jpg"
+                            }
+                            alt="Alfred Chow"
+                            width={200}
+                            height={380}
+                        />
+                    </Box>
+                    <Box display="flex" justifyContent="center">
+                        <h1 className={styles.title}>Alfred Chow</h1>
+                    </Box>
+                    <Box>
+                        <p className={styles.description}>
+                            I&apos;m a Software Developer based in Hong Kong but
+                            working for a Singapore company remotely. My
+                            favorite technologies at this moment are
+                            <CodeBlockText theme={theme}>
+                                React.js
+                            </CodeBlockText>
+                            ,{" "}
+                            <CodeBlockText theme={theme}>
+                                TypeScript
+                            </CodeBlockText>
+                            ,{" "}
+                            <CodeBlockText theme={theme}>GraphQL</CodeBlockText>{" "}
+                            and{" "}
+                            <CodeBlockText theme={theme}>Node.js</CodeBlockText>
+                            .
+                        </p>
+                    </Box>
+                </Box>
 
                 {/* <div className={styles.grid}>
                     <a href="https://nextjs.org/docs" className={styles.card}>
