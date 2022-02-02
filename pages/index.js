@@ -69,16 +69,21 @@ export default function Home() {
                 </Box>
                 <Box mt={6}>
                     <Box display="flex" justifyContent="center">
-                        <Image
-                            src={
-                                matrix
-                                    ? "/profile_pic_dark.jpg"
-                                    : "/profile_pic.jpg"
-                            }
-                            alt="Alfred Chow"
-                            width={matrix ? 222 : 200}
-                            height={380}
-                        />
+                        {matrix ? (
+                            <Image
+                                src="/profile_pic_dark.jpg"
+                                alt="Alfred Chow"
+                                width={222}
+                                height={380}
+                            />
+                        ) : (
+                            <Image
+                                src="/profile_pic.jpg"
+                                alt="Alfred Chow"
+                                width={200}
+                                height={380}
+                            />
+                        )}
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <h1 className={styles.title}>Alfred Chow</h1>
