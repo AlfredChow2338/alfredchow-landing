@@ -5,9 +5,12 @@ import { alpha, styled, useTheme } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
 import Switch from "@mui/material/Switch";
 import Box from "@mui/material/Box";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 import styles from "../styles/Home.module.css";
 import { ThemeContext } from "../context/ThemeContextProvider";
+
+const email_address = "alfredchow2338@gmail.com";
 
 const CodeBlockText = ({ children, theme }) => (
     <code
@@ -62,9 +65,14 @@ export default function Home() {
 
             <main className={styles.main}>
                 <Box textAlign="right" pt={4}>
-                    <ModeSwitch
-                        checked={matrix}
-                        onChange={handleChangeMatrixMode}
+                    <FormControlLabel
+                        control={
+                            <ModeSwitch
+                                checked={matrix}
+                                onChange={handleChangeMatrixMode}
+                            />
+                        }
+                        label={matrix ? "Matrix Mode" : "Light Mode"}
                     />
                 </Box>
                 <Box mt={6}>
@@ -85,8 +93,11 @@ export default function Home() {
                     </Box>
                     <Box>
                         <p className={styles.description}>
-                            I&apos;m a Software Developer based in Hong Kong but
-                            working for a Singapore company remotely. My
+                            I&apos;m a Software Developer{" "}
+                            {matrix
+                                ? "living in the Matrix"
+                                : "based in Hong Kong"}
+                            . I work for a Singapore company remotely. My
                             favorite technologies at this moment are
                             <CodeBlockText theme={theme}>
                                 React.js
@@ -101,6 +112,16 @@ export default function Home() {
                             <CodeBlockText theme={theme}>Node.js</CodeBlockText>
                             .
                         </p>
+                    </Box>
+                    <Box m={8} textAlign="center">
+                        <a
+                            href={`mailto:${email_address}`}
+                            className={styles.card}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {email_address}
+                        </a>
                     </Box>
                 </Box>
 
