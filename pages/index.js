@@ -113,14 +113,47 @@ export default function Home() {
                             .
                         </p>
                     </Box>
-                    <Box mt={8} mb={8} textAlign="center">
+                    <Box
+                        mt={8}
+                        mb={8}
+                        textAlign="center"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                        flexWrap="wrap"
+                    >
                         <a
                             href={`mailto:${email_address}`}
                             className={styles.card}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            {email_address}
+                            <h2>Job Inquiry &rarr;</h2>
+                            {/* <p>{email_address}</p> */}
+                            <Box textAlign="center">
+                                <Image
+                                    src={matrix ? "/gmail.png" : "/gmail.png"}
+                                    width="160"
+                                    height="160"
+                                />
+                            </Box>
+                        </a>
+                        <a
+                            href="https://nextjs.org/learn"
+                            className={styles.card}
+                        >
+                            <h2>Github Repo &rarr;</h2>
+                            <Box textAlign="center">
+                                <Image
+                                    src={
+                                        matrix
+                                            ? "/github_dark.png"
+                                            : "/github.png"
+                                    }
+                                    width="160"
+                                    height="160"
+                                />
+                            </Box>
                         </a>
                     </Box>
                 </Box>
