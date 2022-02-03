@@ -1,13 +1,10 @@
-import { amber, deepOrange, grey } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 
 export const getDesignTokens = (matrix) => ({
     palette: {
         mode: matrix === true ? "dark" : "light",
         primary: {
-            ...amber,
-            ...(matrix === false && {
-                main: amber[300],
-            }),
+            ...grey,
         },
         ...(matrix === true && {
             background: grey[900],
