@@ -11,6 +11,7 @@ import styles from "../styles/Home.module.css";
 import { ThemeContext } from "../context/ThemeContextProvider";
 
 const email_address = "alfredchow2338@gmail.com";
+const github_repo = "https://github.com/AlfredChow2338?tab=repositories";
 
 const CodeBlockText = ({ children, theme }) => (
     <code
@@ -139,8 +140,10 @@ export default function Home() {
                             </Box>
                         </a>
                         <a
-                            href="https://nextjs.org/learn"
+                            href={github_repo}
                             className={styles.card}
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <h2>Github Repo &rarr;</h2>
                             <Box textAlign="center">
@@ -157,46 +160,6 @@ export default function Home() {
                         </a>
                     </Box>
                 </Box>
-
-                {/* <div className={styles.grid}>
-                    <a href="https://nextjs.org/docs" className={styles.card}>
-                        <h2>Documentation &rarr;</h2>
-                        <p>
-                            Find in-depth information about Next.js features and
-                            API.
-                        </p>
-                    </a>
-
-                    <a href="https://nextjs.org/learn" className={styles.card}>
-                        <h2>Learn &rarr;</h2>
-                        <p>
-                            Learn about Next.js in an interactive course with
-                            quizzes!
-                        </p>
-                    </a>
-
-                    <a
-                        href="https://github.com/vercel/next.js/tree/master/examples"
-                        className={styles.card}
-                    >
-                        <h2>Examples &rarr;</h2>
-                        <p>
-                            Discover and deploy boilerplate example Next.js
-                            projects.
-                        </p>
-                    </a>
-
-                    <a
-                        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                    >
-                        <h2>Deploy &rarr;</h2>
-                        <p>
-                            Instantly deploy your Next.js site to a public URL
-                            with Vercel.
-                        </p>
-                    </a>
-                </div> */}
             </main>
 
             <footer className={styles.footer}>
