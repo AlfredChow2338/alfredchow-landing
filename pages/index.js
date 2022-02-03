@@ -113,7 +113,7 @@ export default function Home() {
                             .
                         </p>
                     </Box>
-                    <Box m={8} textAlign="center">
+                    <Box mt={8} mb={8} textAlign="center">
                         <a
                             href={`mailto:${email_address}`}
                             className={styles.card}
