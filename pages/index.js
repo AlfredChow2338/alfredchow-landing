@@ -28,7 +28,7 @@ const CodeBlockText = ({ children, theme }) => (
 export default function Home() {
     const theme = useTheme();
     const { matrix, toggleMatrix } = React.useContext(ThemeContext);
-    const ModeSwitch = styled(Switch)(({ theme }) => ({
+    const ModeSwitch = styled(Switch)(() => ({
         "& .MuiSwitch-switchBase.Mui-checked": {
             color: grey[600],
             "&:hover": {
@@ -45,7 +45,7 @@ export default function Home() {
     const handleChangeMatrixMode = (e) => {
         toggleMatrix();
     };
-    console.log(matrix);
+    console.log(theme);
     return (
         <div
             className={styles.container}
@@ -69,21 +69,16 @@ export default function Home() {
                 </Box>
                 <Box mt={6}>
                     <Box display="flex" justifyContent="center">
-                        {matrix ? (
-                            <Image
-                                src="/profile_pic_dark.jpg"
-                                alt="Alfred Chow"
-                                width={222}
-                                height={380}
-                            />
-                        ) : (
-                            <Image
-                                src="/profile_pic.jpg"
-                                alt="Alfred Chow"
-                                width={200}
-                                height={380}
-                            />
-                        )}
+                        <Image
+                            src={
+                                matrix
+                                    ? "/profile_pic_dark.jpg"
+                                    : "/profile_pic.jpg"
+                            }
+                            alt="Alfred Chow"
+                            width={200}
+                            height={380}
+                        />
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <h1 className={styles.title}>Alfred Chow</h1>
