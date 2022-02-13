@@ -49,7 +49,6 @@ export default function Home() {
     const handleChangeMatrixMode = (e) => {
         toggleMatrix();
     };
-    console.log(theme);
     return (
         <div
             className={styles.container}
@@ -65,25 +64,10 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                <Box textAlign="right" pt={4}>
-                    <FormControlLabel
-                        control={
-                            <ModeSwitch
-                                checked={matrix}
-                                onChange={handleChangeMatrixMode}
-                            />
-                        }
-                        label={matrix ? "Matrix Mode" : "Light Mode"}
-                    />
-                </Box>
-                <Box mt={6}>
+                <Box pt={6}>
                     <Box display="flex" justifyContent="center">
                         <Image
-                            src={
-                                matrix
-                                    ? "/profile_pic_dark.jpg"
-                                    : "/profile_pic.jpg"
-                            }
+                            src="/profile_pic.jpg"
                             alt="Alfred Chow"
                             width={200}
                             height={380}
@@ -98,7 +82,7 @@ export default function Home() {
                             {matrix
                                 ? "living in the Matrix"
                                 : "based in Hong Kong"}
-                            . I work for a Singapore company remotely. My
+                            .  My
                             favorite technologies at this moment are
                             <CodeBlockText theme={theme}>
                                 React.js
@@ -129,7 +113,7 @@ export default function Home() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <h2>Job Inquiry &rarr;</h2>
+                            <h2>Contact Me &rarr;</h2>
                             {/* <p>{email_address}</p> */}
                             <Box textAlign="center">
                                 <Image
@@ -159,6 +143,17 @@ export default function Home() {
                             </Box>
                         </a>
                     </Box>
+                </Box>
+                <Box textAlign="center" mb={4}> 
+                    <FormControlLabel
+                        control={
+                            <ModeSwitch
+                                checked={matrix}
+                                onChange={handleChangeMatrixMode}
+                            />
+                        }
+                        label={matrix ? "Dark" : "Light"}
+                    />
                 </Box>
             </main>
 
