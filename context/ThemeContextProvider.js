@@ -4,14 +4,14 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { getDesignTokens } from "../theme/Theme";
 
 const defaultState = {
-    matrix: false,
+    matrix: true,
     toggleMatrix: () => {},
 };
 
 export const ThemeContext = React.createContext(defaultState);
 
 const ThemeContextProvider = ({ children }) => {
-    const [matrix, setMatrix] = React.useState(false);
+    const [matrix, setMatrix] = React.useState(true);
     const toggleMatrix = () => {
         setMatrix((prev) => !prev);
     };

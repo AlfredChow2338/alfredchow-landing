@@ -65,34 +65,34 @@ export default function Home() {
 
             <main className={styles.main}>
                 <Box pt={6}>
-                    <Box display="flex" justifyContent="center">
-                        <h1 className={styles.title}>Alfred Chow</h1>
-                    </Box>
-                    <Box display="flex" justifyContent="center">
+                <Box display="flex" justifyContent="center">
                         <div 
                           style={{
                             borderRadius: '50%', 
                             overflow: 'hidden',
-                            width: '56px', 
-                            height: '56px'
+                            width: '100px', 
+                            height: '100px'
                           }}
                         >
                             <Image
-                                src="/profile_pic.png"
+                                src="/propic.jpeg"
                                 alt="Alfred Chow"
-                                width={56}
-                                height={56}
+                                width={100}
+                                height={100}
                             />
                         </div>
                     </Box>
+                    <Box display="flex" justifyContent="center">
+                        <h1 className={styles.title}>Alfred Chow</h1>
+                    </Box>
                     <Box>
                         <p className={styles.description}>
-                            I&apos;m a Software Developer{" "}
-                            {matrix
-                                ? "living in the Matrix"
-                                : "based in Hong Kong"}
-                            .  My
-                            favorite technologies at this moment are
+                            I&apos;m a HK-based Software Engineer. 
+                            My favorite technologies are
+                            <CodeBlockText theme={theme}>
+                                Flutter
+                            </CodeBlockText>
+                            ,{" "}
                             <CodeBlockText theme={theme}>
                                 React.js
                             </CodeBlockText>
@@ -103,8 +103,7 @@ export default function Home() {
                             ,{" "}
                             <CodeBlockText theme={theme}>GraphQL</CodeBlockText>{" "}
                             and{" "}
-                            <CodeBlockText theme={theme}>Node.js</CodeBlockText>
-                            .
+                            <CodeBlockText theme={theme}>Golang</CodeBlockText>.
                         </p>
                     </Box>
                     <Box
