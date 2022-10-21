@@ -66,15 +66,24 @@ export default function Home() {
             <main className={styles.main}>
                 <Box pt={6}>
                     <Box display="flex" justifyContent="center">
-                        <Image
-                            src="/profile_pic.jpg"
-                            alt="Alfred Chow"
-                            width={200}
-                            height={380}
-                        />
+                        <h1 className={styles.title}>Alfred Chow</h1>
                     </Box>
                     <Box display="flex" justifyContent="center">
-                        <h1 className={styles.title}>Alfred Chow</h1>
+                        <div 
+                          style={{
+                            borderRadius: '50%', 
+                            overflow: 'hidden',
+                            width: '56px', 
+                            height: '56px'
+                          }}
+                        >
+                            <Image
+                                src="/profile_pic.png"
+                                alt="Alfred Chow"
+                                width={56}
+                                height={56}
+                            />
+                        </div>
                     </Box>
                     <Box>
                         <p className={styles.description}>
