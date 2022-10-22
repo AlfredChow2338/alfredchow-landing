@@ -60,7 +60,7 @@ export default function Home() {
             <Head>
                 <title>Alfred Chow</title>
                 <meta name="keywords" content="Alfred Chow" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/propic-circle.png" />
             </Head>
 
             <main className={styles.main}>
