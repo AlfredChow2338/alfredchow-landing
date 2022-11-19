@@ -13,7 +13,7 @@ import { ThemeContext } from "../context/ThemeContextProvider";
 const email_address = "alfredchow2338@gmail.com";
 const github_repo = "https://github.com/AlfredChow2338?tab=repositories";
 
-const CodeBlockText = ({ children, theme }) => (
+export const CodeBlockText = ({ children, theme }) => (
     <code
         style={{
             backgroundColor: theme.palette.codeblock,
@@ -108,7 +108,6 @@ export default function Home() {
                     </Box>
                     <Box
                         mt={8}
-                        mb={8}
                         textAlign="center"
                         display="flex"
                         justifyContent="center"
@@ -149,6 +148,21 @@ export default function Home() {
                                     height="160"
                                 />
                             </Box>
+                        </a>
+                    </Box>
+                    <Box
+                        textAlign="center"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                        flexWrap="wrap"
+                    >
+                        <a
+                            href={`/translator`}
+                            className={styles.card}
+                            rel="noopener noreferrer"
+                        >
+                            <h2>Kong Girl Translator &rarr;</h2>
                         </a>
                     </Box>
                 </Box>
