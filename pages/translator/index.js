@@ -6,7 +6,7 @@ import { useTheme } from "@mui/material/styles";
 
 import styles from "../../styles/Home.module.css";
 import { CodeBlockText } from "..";
-import map from "./util";
+import map from "../../util/translator";
 
 const convertChineseToKongGirlPinYin = (text) => {
   const textArr = text.split('')
